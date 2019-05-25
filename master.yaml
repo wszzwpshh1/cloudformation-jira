@@ -165,7 +165,7 @@ Resources:
     - "MySecurityGroup"
     Properties:
       TemplateURL: !Sub "${PMTemplateURL}/atlassian-rds.yaml"
-      TimeoutInMinutes: '5'
+      TimeoutInMinutes: '120'
       Parameters:
         PMServerEnv: !Ref "AWS::StackName"
         DatabaseUser: !Ref "PMDatabaseUsername"
@@ -200,7 +200,7 @@ Resources:
     - "MyJiraELB"
     Properties:
       TemplateURL: !Sub "${PMTemplateURL}/atlassian-autoscaling-jira.yaml"
-      TimeoutInMinutes: '5'
+      TimeoutInMinutes: '120'
       Parameters:
         PMServerEnv: !Ref "AWS::StackName"
         PMKeyName: !Ref "PMKeyName"
@@ -213,7 +213,7 @@ Resources:
         PMPrivateSubnets: !GetAtt "MyVPC.Outputs.PrivateSubnets"
         PMDomainJira: !Sub "${DomainJiraPrefix}"
         PMAutoscaleMin: '1'
-        PMAutoscaleMax: '1'
+        PMAutoscaleMax: '2'
         PMAutoscaleDes: '1'
 
   MyDNS:
@@ -222,7 +222,7 @@ Resources:
     - "MyJiraAutoScaling"
     Properties:
       TemplateURL: !Sub "${PMTemplateURL}/atlassian-route53.yaml"
-      TimeoutInMinutes: '5'
+      TimeoutInMinutes: '30'
       Parameters:
         PMJiraLBDNSName: !GetAtt "MyJiraELB.Outputs.JiraLBDNSName"
         PMJiraLBHostedZoneId: !GetAtt "MyJiraELB.Outputs.JiraLBHostedZoneId"

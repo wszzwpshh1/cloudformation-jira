@@ -117,7 +117,7 @@ Resources:
     Type: "AWS::RDS::DBParameterGroup"
     Properties: 
       Description: "CloudFormation Sample Parameter Group"
-      Family: "mysql5.6"
+      Family: "mysql5.7"
       Parameters:
         character_set_database: "utf8"
         character_set_connection: "utf8"

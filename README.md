@@ -86,7 +86,7 @@ Example using AWS CLI Command :
 2. Next install [AWS CLI](aws.amazon.com/cli) in your workstation.
 
 3. Upload the files in the "infrastructure" directory into to your own S3 bucket.
- - Eg. aws s3 cp --recursive infrastructure/ s3://cf-templates-19sg5y0d6d084-ap-southeast-1/
+ - Eg. aws s3 sync infrastructure/ s3://cf-templates-19sg5y0d6d099-ap-southeast-1/
 
 4. You can run the master.yaml file from your workstation.
 
@@ -117,8 +117,8 @@ Example :
 aws cloudformation create-stack \
 --stack-name jira-stack \
 --capabilities=CAPABILITY_NAMED_IAM \
---parameters ParameterKey=DomainJiraPrefix,ParameterValue=dev-jira.zzz2h.com \
-ParameterKey=DomainRdsPrefix,ParameterValue=dev-rds.zzz2h.com \
+--parameters ParameterKey=DomainJiraPrefix,ParameterValue=jira.zzz2h.com \
+ParameterKey=DomainRdsPrefix,ParameterValue=rds.zzz2h.com \
 ParameterKey=PMJiraInstanceType,ParameterValue=t3.small \
 ParameterKey=PMDatabaseName,ParameterValue=l1tjiradb \
 ParameterKey=PMDatabasePassword,ParameterValue=Pass123456 \

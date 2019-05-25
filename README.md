@@ -115,23 +115,23 @@ aws cloudformation delete-stack --stack-name <env>
 
 Example :
 aws cloudformation create-stack \
---stack-name dev \
+--stack-name jira-stack \
 --capabilities=CAPABILITY_IAM \
---parameters ParameterKey=DomainJiraPrefix,ParameterValue=dev-jira.crytera.com \
---parameters ParameterKey=DomainRdsPrefix,ParameterValue=dev-rds.crytera.com \
---parameters ParameterKey=InstanceType,ParameterValue=t2.medium \
---parameters ParameterKey=PMDatabasePassword,ParameterValue=xxxxxxx \
---parameters ParameterKey=PMDatabaseUsername,ParameterValue=jirastartadmin \
---parameters ParameterKey=PMHostedZone,ParameterValue=crytera.com \
---parameters ParameterKey=PMKeyName_NV,ParameterValue=mykey_nv \
---parameters ParameterKey=PMOWNIP,ParameterValue=192.xx.xx.xx/32 \
---parameters ParameterKey=PMPrivateSubnet1CIDR,ParameterValue=10.0.3.0/24 \
---parameters ParameterKey=PMPrivateSubnet2CIDR,ParameterValue=10.0.4.0/24 \
---parameters ParameterKey=PMPublicSubnet1CIDR,ParameterValue=10.0.1.0/24 \
---parameters ParameterKey=PMPublicSubnet2CIDR,ParameterValue=10.0.2.0/24 \
---parameters ParameterKey=PMVpcCIDR,ParameterValue=10.0.0.0/16 \
---template-body file:////path_to_template//cloudformation-jira//master.yaml
-	
+--parameters ParameterKey=DomainJiraPrefix,ParameterValue=dev-jira.zzz2h.com \
+ParameterKey=DomainRdsPrefix,ParameterValue=dev-rds.zzz2h.com \
+ParameterKey=PMJiraInstanceType,ParameterValue=t3.small \
+ParameterKey=PMDatabasePassword,ParameterValue=****** \
+ParameterKey=PMDatabaseUsername,ParameterValue=admin \
+ParameterKey=PMHostedZone,ParameterValue=zzz2h.com \
+ParameterKey=PMKeyName,ParameterValue=jira-ec2-key \
+ParameterKey=PMOWNIP,ParameterValue=0.0.0.0/0 \
+ParameterKey=PMPrivateSubnet1CIDR,ParameterValue=10.0.3.0/24 \
+ParameterKey=PMPrivateSubnet2CIDR,ParameterValue=10.0.4.0/24 \
+ParameterKey=PMPublicSubnet1CIDR,ParameterValue=10.0.1.0/24 \
+ParameterKey=PMPublicSubnet2CIDR,ParameterValue=10.0.2.0/24 \
+ParameterKey=PMVpcCIDR,ParameterValue=10.0.0.0/16 \
+ParameterKey=PMTemplateURL,ParameterValue=https://s3.amazonaws.com/cf-templates-19sg5y0d6d099-ap-southeast-1 \
+--template-body file://master.yaml
 ```
 
 ### Deploy multiple environments (e.g., dev, staging, production)

@@ -58,6 +58,7 @@ Parameters:
     Type: "String"
     Default: "t2.medium" # minimum requirement for Jira is t2.medium.
     AllowedValues: 
+      - "t3.small"
       - "t2.medium"
       - "m3.medium"
       - "m4.large"
@@ -98,6 +99,10 @@ Mappings:
       # AStorage - The storage class to which you want the object to transition.
       AStorage: "GLACIER"
 ###############################################################################################################
+    ap-southeast-1:
+      AMI: "ami-0b5a47f8865280111"
+      CertARN: "arn:aws:acm:ap-southeast-1:274295465137:certificate/131e6aac-97fa-4160-9e92-aee1718aacd0"
+      AStorage: "GLACIER"
 
 Resources:
 

@@ -116,11 +116,12 @@ aws cloudformation delete-stack --stack-name <env>
 Example :
 aws cloudformation create-stack \
 --stack-name jira-stack \
---capabilities=CAPABILITY_IAM \
+--capabilities=CAPABILITY_NAMED_IAM \
 --parameters ParameterKey=DomainJiraPrefix,ParameterValue=dev-jira.zzz2h.com \
 ParameterKey=DomainRdsPrefix,ParameterValue=dev-rds.zzz2h.com \
 ParameterKey=PMJiraInstanceType,ParameterValue=t3.small \
-ParameterKey=PMDatabasePassword,ParameterValue=****** \
+ParameterKey=PMDatabaseName,ParameterValue=l1tjiradb \
+ParameterKey=PMDatabasePassword,ParameterValue=Pass123456 \
 ParameterKey=PMDatabaseUsername,ParameterValue=admin \
 ParameterKey=PMHostedZone,ParameterValue=zzz2h.com \
 ParameterKey=PMKeyName,ParameterValue=jira-ec2-key \

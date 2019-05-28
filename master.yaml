@@ -105,7 +105,7 @@ Mappings:
       AStorage: "GLACIER"
 ###############################################################################################################
     ap-southeast-1:
-      AMI: "ami-0b5a47f8865280111"
+      AMI: "ami-fdb8229e"
       CertARN: "arn:aws:acm:ap-southeast-1:274295465137:certificate/131e6aac-97fa-4160-9e92-aee1718aacd0"
       AStorage: "GLACIER"
 

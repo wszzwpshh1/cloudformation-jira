@@ -213,7 +213,7 @@ Resources:
         PMPrivateSubnets: !GetAtt "MyVPC.Outputs.PrivateSubnets"
         PMDomainJira: !Sub "${DomainJiraPrefix}"
         PMAutoscaleMin: '1'
-        PMAutoscaleMax: '2'
+        PMAutoscaleMax: '1'
         PMAutoscaleDes: '1'
 
   MyDNS:
